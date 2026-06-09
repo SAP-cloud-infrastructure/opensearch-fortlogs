@@ -29,7 +29,12 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 - [PRs by thecodingshrimp](https://github.com/opensearch-project/security-analytics/pulls/thecodingshrimp)
 - [PRs by carmeroa](https://github.com/opensearch-project/security-analytics/pulls/carmeroa)
 
-## Building the image
+## Published image
+Images are build and push to Keppel Container Image Registry using [Concourse](https://ci1.eu-de-2.cloud.sap/teams/monitoring/pipelines/opensearch-logs?group=build-images).
+
+All published versions are [here](https://dashboard.eu-de-1.cloud.sap/ccadmin/master/keppel/#/repo/ccloud/opensearch-fortlogs).
+
+## Building locally
 
 ```bash
 docker build --platform linux/amd64 -t opensearch-fortlogs:3.6.0 .
