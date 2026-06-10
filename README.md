@@ -1,3 +1,6 @@
+# IMPORTANT!
+Dockerfile moved to [greenhouse-extentions/opensearch/build](https://github.com/cloudoperators/greenhouse-extensions/pull/1715)
+
 # opensearch-fortlogs
 
 Custom OpenSearch Docker image that replaces the bundled `opensearch-security-analytics` and `opensearch-alerting` plugins with patched builds containing upstream fixes not yet merged.
