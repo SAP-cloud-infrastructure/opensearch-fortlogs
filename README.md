@@ -1,24 +1,21 @@
-# IMPORTANT!
-Dockerfile moved to [greenhouse-extentions/opensearch/build](https://github.com/cloudoperators/greenhouse-extensions/pull/1715)
-
 # opensearch-fortlogs
 
 Custom OpenSearch Docker image that replaces the bundled `opensearch-security-analytics` and `opensearch-alerting` plugins with patched builds containing upstream fixes not yet merged.
 
 ## Why
 
-Upstream PRs with critical fixes are open but unmerged. This image ships those fixes by building the plugins from source branches before the patches land in an official release.
+Upstream PRs with critical fixes are open but unmerged. This image ships those fixes by installing plugin ZIPs built from source branches before the patches land in an official release.
 
 ## Base image
 
-`opensearchproject/opensearch:3.6.0` (linux/amd64)
+`opensearchproject/opensearch:3.7.0` (linux/amd64)
 
 ## What this image does
 
 1. Removes the stock `opensearch-security-analytics` and `opensearch-alerting` plugins.
 2. Installs custom-built plugin ZIPs that include the patches listed below.
 
-> **Order matters.** `opensearch-alerting` must be removed and installed before `opensearch-security-analytics`. Do not change the order in the Dockerfile.
+> **Order matters.** Do not change the order in the Dockerfile.
 
 ## Upstream PRs included
 
@@ -32,15 +29,25 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 - [PRs by thecodingshrimp](https://github.com/opensearch-project/security-analytics/pulls/thecodingshrimp)
 - [PRs by carmeroa](https://github.com/opensearch-project/security-analytics/pulls/carmeroa)
 
-## Published image
-Images are build and push to Keppel Container Image Registry using [Concourse](https://ci1.eu-de-2.cloud.sap/teams/monitoring/pipelines/opensearch-logs?group=build-images).
+## Open upstream issues
 
-All published versions are [here](https://dashboard.eu-de-1.cloud.sap/ccadmin/master/keppel/#/repo/ccloud/opensearch-fortlogs).
+| Repo | PR | Title |
+|------|----|-------|
+| opensearch-project/alerting | [#2163](https://github.com/opensearch-project/alerting/pull/2163) | fix: stop DestinationMigrationCoordinator cycling on unrelated cluster events |
+| opensearch-project/alerting | [#2158](https://github.com/opensearch-project/alerting/pull/2158) | Fix: Skip alias-type fields in doc-level monitor query index mapping |
+| opensearch-project/alerting | [#2154](https://github.com/opensearch-project/alerting/pull/2154) | fix: correct inverted condition in DocLevelMonitorQueries causing query index churn |
+| opensearch-project/alerting | [#2145](https://github.com/opensearch-project/alerting/pull/2145) | Fix/workflow validation ~10 delegation monitor limit |
+| opensearch-project/alerting | [#2150](https://github.com/opensearch-project/alerting/pull/2150) | Fix/doc level monitor sample documents source fields |
+| opensearch-project/security-analytics | [#1726](https://github.com/opensearch-project/security-analytics/pull/1726) | fix: set deleteQueryIndexInEveryRun=false for chained_findings monitor |
+| ~~opensearch-project/security-analytics~~ | [~~#1722~~](https://github.com/opensearch-project/security-analytics/pull/1722)  | ~~Fix mutable script params for detector trigger actions~~ |
+
+## Published image
+Images are built and pushed to ghcr.io by the [Build Docker images and push to registry workflow](https://github.com/cloudoperators/greenhouse-extensions/actions/workflows/docker-build.yaml) (on pushes to main/version tags, and via manual trigger when an extra tag is needed). Pushed images are automatically mirrored to Keppel Container Image Registry.
 
 ## Building locally
 
 ```bash
-docker build --platform linux/amd64 -t opensearch-fortlogs:3.6.0 .
+docker build --platform linux/amd64 -t opensearch-fortlogs:3.7.0 .
 ```
 
 ## Removing a patch
