@@ -1,3 +1,6 @@
+#  SPDX-FileCopyrightText: 2026 SAP SE or an SAP affiliate company
+#  SPDX-License-Identifier: Apache-2.0
+
 # OpenSearch 3.7.0
 FROM opensearchproject/opensearch@sha256:123e6591a47b1d54686890551bdb35739c85193ecded381219fc9e059e18128f
 
