@@ -1,5 +1,8 @@
 # opensearch-fortlogs
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-cloud-infrastructure/opensearch-fortlogs)](https://api.reuse.software/info/github.com/SAP-cloud-infrastructure/opensearch-fortlogs)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSES/Apache-2.0.txt)
+
 Custom OpenSearch Docker image that replaces the bundled `opensearch-security-analytics` and `opensearch-alerting` plugins with patched builds containing upstream fixes not yet merged.
 
 ## Why
@@ -53,3 +56,19 @@ docker build --platform linux/amd64 -t opensearch-fortlogs:3.7.0 .
 ## Removing a patch
 
 Once an upstream PR merges and a new OpenSearch release ships the fix, remove the custom plugin from the build and bump the base image version. When all patches for a plugin are upstreamed, revert to the official plugin.
+
+## Support, Feedback, Contributing
+
+This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP-cloud-infrastructure/opensearch-fortlogs/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, see our [Contribution Guidelines](CONTRIBUTING.md).
+
+## Security / Disclosure
+
+If you find any bug that may be a security problem, please follow our instructions in the [security policy](SECURITY.md) on how to report it. Please do not create GitHub issues for security-related doubts or problems.
+
+## Code of Conduct
+
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone. By participating in this project, you agree to abide by its [Code of Conduct](CODE_OF_CONDUCT.md) at all times.
+
+## Licensing
+
+Copyright 2026 SAP SE or an SAP affiliate company and opensearch-fortlogs contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP-cloud-infrastructure/opensearch-fortlogs).
