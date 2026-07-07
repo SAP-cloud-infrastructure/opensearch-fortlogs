@@ -4,9 +4,9 @@ FROM opensearchproject/opensearch@sha256:123e6591a47b1d54686890551bdb35739c85193
 LABEL source_repository="https://github.com/SAP-cloud-infrastructure/opensearch-fortlogs.git"
 
 # Download and verify plugin archives
-RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v4/opensearch-alerting-3.7.0.0-sci-v4-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
+RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v5/opensearch-alerting-3.7.0.0-sci-v5-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
  && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v2/opensearch-security-analytics-3.7.0.0-sci-v2-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
- && echo "212866db2f1c3d42857d97743fc9df7a458b8bd8f0e4bafe5befaf2e4e248a76  /tmp/opensearch-alerting.zip" | sha256sum -c - \
+ && echo "2d0d7f413de7ec30713b995ae24c517b59bebb45ca51e656a50870371d3421bf  /tmp/opensearch-alerting.zip" | sha256sum -c - \
  && echo "67d7dcf47a250f1034fd02f840b19525812799e84e9d753cf77876a7328c94fc  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
 
 # Don't change the order!
