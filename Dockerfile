@@ -7,10 +7,10 @@ FROM opensearchproject/opensearch@sha256:123e6591a47b1d54686890551bdb35739c85193
 LABEL source_repository="https://github.com/SAP-cloud-infrastructure/opensearch-fortlogs.git"
 
 # Download and verify plugin archives
-RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v5/opensearch-alerting-3.7.0.0-sci-v5-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
- && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v2/opensearch-security-analytics-3.7.0.0-sci-v2-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
- && echo "2d0d7f413de7ec30713b995ae24c517b59bebb45ca51e656a50870371d3421bf  /tmp/opensearch-alerting.zip" | sha256sum -c - \
- && echo "67d7dcf47a250f1034fd02f840b19525812799e84e9d753cf77876a7328c94fc  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
+RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v6/opensearch-alerting-3.7.0.0-sci-v6-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
+ && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v3/opensearch-security-analytics-3.7.0.0-sci-v3-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
+ && echo "4baf0f27a47a2082f8d2402c5fcda4212cd99d97a99f7ce029900f7d03abef85  /tmp/opensearch-alerting.zip" | sha256sum -c - \
+ && echo "741c6aa79e69f23ad1cbd5b949c9bed40b1444471cb854516494fbadb525c814  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
 
 # Don't change the order!
 RUN /usr/share/opensearch/bin/opensearch-plugin remove opensearch-security-analytics \
