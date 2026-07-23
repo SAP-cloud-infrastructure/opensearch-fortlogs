@@ -34,15 +34,21 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 
 ## Open upstream issues
 
-| Repo | PR | Title |
-|------|----|-------|
-| opensearch-project/alerting | [#2163](https://github.com/opensearch-project/alerting/pull/2163) | fix: stop DestinationMigrationCoordinator cycling on unrelated cluster events |
-| opensearch-project/alerting | [#2158](https://github.com/opensearch-project/alerting/pull/2158) | Fix: Skip alias-type fields in doc-level monitor query index mapping |
-| opensearch-project/alerting | [#2154](https://github.com/opensearch-project/alerting/pull/2154) | fix: correct inverted condition in DocLevelMonitorQueries causing query index churn |
-| opensearch-project/alerting | [#2145](https://github.com/opensearch-project/alerting/pull/2145) | Fix/workflow validation ~10 delegation monitor limit |
-| opensearch-project/alerting | [#2150](https://github.com/opensearch-project/alerting/pull/2150) | Fix/doc level monitor sample documents source fields |
-| opensearch-project/security-analytics | [#1726](https://github.com/opensearch-project/security-analytics/pull/1726) | fix: set deleteQueryIndexInEveryRun=false for chained_findings monitor |
-| ~~opensearch-project/security-analytics~~ | [~~#1722~~](https://github.com/opensearch-project/security-analytics/pull/1722)  | ~~Fix mutable script params for detector trigger actions~~ |
+| Repo | Type | Link | Title |
+|------|------|------|-------|
+| opensearch-project/alerting | PR | [#2163](https://github.com/opensearch-project/alerting/pull/2163) | fix: stop DestinationMigrationCoordinator cycling on unrelated cluster events |
+| opensearch-project/alerting | PR | [#2158](https://github.com/opensearch-project/alerting/pull/2158) | Fix: Skip alias-type fields in doc-level monitor query index mapping |
+| opensearch-project/alerting | PR | [#2154](https://github.com/opensearch-project/alerting/pull/2154) | fix: correct inverted condition in DocLevelMonitorQueries causing query index churn |
+| opensearch-project/alerting | PR | [#2145](https://github.com/opensearch-project/alerting/pull/2145) | Fix/workflow validation ~10 delegation monitor limit |
+| opensearch-project/alerting | PR | [#2150](https://github.com/opensearch-project/alerting/pull/2150) | Fix/doc level monitor sample documents source fields |
+| opensearch-project/alerting | Issue | [#2157](https://github.com/opensearch-project/alerting/issues/2157) | [BUG] Doc-level monitor upsertQueryIndex fails with HTTP 500 when source index contains alias-type fields |
+| opensearch-project/alerting | Issue | [#2153](https://github.com/opensearch-project/alerting/issues/2153) | [BUG] DocLevelMonitorQueries: inverted condition causes query index to be deleted and recreated on every monitor execution |
+| opensearch-project/alerting | Issue | [#2144](https://github.com/opensearch-project/alerting/issues/2144) | [BUG] Workflow Validation Fails for Detectors with More Than 10 Rules |
+| opensearch-project/alerting | Issue | [#2149](https://github.com/opensearch-project/alerting/issues/2149) | [BUG] Doc-level monitor action templates cannot reliably access the original matched document for notifications on routed indices |
+| opensearch-project/security-analytics | PR | [#1726](https://github.com/opensearch-project/security-analytics/pull/1726) | fix: set deleteQueryIndexInEveryRun=false for chained_findings monitor |
+| opensearch-project/security-analytics | Issue | [#1731](https://github.com/opensearch-project/security-analytics/issues/1731) | [BUG] OSMapping uses `timestamp` alias instead of ECS-standard `@timestamp`, breaking time-range filters for ECS-compliant indices |
+| opensearch-project/security-analytics | Issue | [#1725](https://github.com/opensearch-project/security-analytics/issues/1725) | [BUG] TransportIndexDetectorAction: chained_findings monitor created with deleteQueryIndexInEveryRun=true causing index churn |
+| ~~opensearch-project/security-analytics~~ | ~~PR~~ | [~~#1722~~](https://github.com/opensearch-project/security-analytics/pull/1722) | ~~Fix mutable script params for detector trigger actions~~ |
 
 ## Published image
 Images are built and pushed to ghcr.io by the [Build Docker images and push to registry workflow](https://github.com/cloudoperators/greenhouse-extensions/actions/workflows/docker-build.yaml) (on pushes to main/version tags, and via manual trigger when an extra tag is needed). Pushed images are automatically mirrored to Keppel Container Image Registry.
