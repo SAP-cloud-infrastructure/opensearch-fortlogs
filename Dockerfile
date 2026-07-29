@@ -8,7 +8,7 @@ LABEL source_repository="https://github.com/SAP-cloud-infrastructure/opensearch-
 
 # Download and verify plugin archives
 RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v6/opensearch-alerting-3.7.0.0-sci-v6-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
- && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v4/opensearch-security-analytics-3.7.0.0-sci-v4.zip -o /tmp/opensearch-security-analytics.zip \
+ && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v4/opensearch-security-analytics-3.7.0.0-sci-v4-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
  && echo "4baf0f27a47a2082f8d2402c5fcda4212cd99d97a99f7ce029900f7d03abef85  /tmp/opensearch-alerting.zip" | sha256sum -c - \
  && echo "9c3628d12c87871850fb479181effe4ec26f705d8bb747afcf3097f7db6b56aa  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
 
