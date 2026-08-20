@@ -49,8 +49,11 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 | opensearch-project/security-analytics | Issue | [#1731](https://github.com/opensearch-project/security-analytics/issues/1731) | [BUG] OSMapping uses `timestamp` alias instead of ECS-standard `@timestamp`, breaking time-range filters for ECS-compliant indices |
 | opensearch-project/security-analytics | Issue | [#1725](https://github.com/opensearch-project/security-analytics/issues/1725) | [BUG] TransportIndexDetectorAction: chained_findings monitor created with deleteQueryIndexInEveryRun=true causing index churn |
 | ~~opensearch-project/security-analytics~~ | ~~PR~~ | [~~#1722~~](https://github.com/opensearch-project/security-analytics/pull/1722) | ~~Fix mutable script params for detector trigger actions~~ |
+| opensearch-project/common-utils | PR | [#967](https://github.com/opensearch-project/common-utils/issues/967) | Fix ClassCastException from immutable map returned by StreamInput.readMap() |
+| opensearch-project/common-utils | Issue | [#968](https://github.com/opensearch-project/common-utils/pull/968) | Fix ClassCastException from immutable map returned by StreamInput.readMap() |
 
 ## Published image
+
 Images are built and pushed to ghcr.io by the [Build Docker images and push to registry workflow](https://github.com/cloudoperators/greenhouse-extensions/actions/workflows/docker-build.yaml) (on pushes to main/version tags, and via manual trigger when an extra tag is needed). Pushed images are automatically mirrored to Keppel Container Image Registry.
 
 The image tag (`Imagetag` in the greenhouse-extensions build matrix) uses a four-segment `3.7.0.N` scheme: `3.7.0` is the base OpenSearch version and `N` is the build counter (`3.7.0.3`, `3.7.0.4`, ...). Increment `N` for each rebuild. Do **not** use a prerelease suffix like `3.7.0-devNN`: the OpenSearch operator derives the cluster version from this tag and its semver gate (`>=2.0.0`) excludes prerelease versions, which makes it mis-render `plugins.security.authcz.admin_dn`.
