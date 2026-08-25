@@ -31,6 +31,7 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 
 - [PRs by thecodingshrimp](https://github.com/opensearch-project/security-analytics/pulls/thecodingshrimp)
 - [PRs by carmeroa](https://github.com/opensearch-project/security-analytics/pulls/carmeroa)
+- [PRs by NelTdS](https://github.com/opensearch-project/security-analytics/pulls/NelTdS)
 
 ## Open upstream issues
 
@@ -42,11 +43,13 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 | opensearch-project/alerting | PR | [#2145](https://github.com/opensearch-project/alerting/pull/2145) | Fix/workflow validation ~10 delegation monitor limit |
 | opensearch-project/alerting | PR | [#2150](https://github.com/opensearch-project/alerting/pull/2150) | Fix/doc level monitor sample documents source fields |
 | opensearch-project/alerting | PR | [#2221](https://github.com/opensearch-project/alerting/pull/2221) |  Fix/doc level monitor sample documents source fields |
+| opensearch-project/alerting | PR | [#2223](https://github.com/opensearch-project/alerting/pull/2223) | Fix doc-level monitor failure on source indices with custom analysis or malformed mappings (ref issues: [alerting#961](https://github.com/opensearch-project/alerting/issues/961), [security-analytics#697](https://github.com/opensearch-project/security-analytics/issues/697), [security-analytics#1798](https://github.com/opensearch-project/security-analytics/issues/1798)) |
 | opensearch-project/alerting | Issue | [#2157](https://github.com/opensearch-project/alerting/issues/2157) | [BUG] Doc-level monitor upsertQueryIndex fails with HTTP 500 when source index contains alias-type fields |
 | opensearch-project/alerting | Issue | [#2153](https://github.com/opensearch-project/alerting/issues/2153) | [BUG] DocLevelMonitorQueries: inverted condition causes query index to be deleted and recreated on every monitor execution |
 | opensearch-project/alerting | Issue | [#2144](https://github.com/opensearch-project/alerting/issues/2144) | [BUG] Workflow Validation Fails for Detectors with More Than 10 Rules |
 | opensearch-project/alerting | Issue | [#2149](https://github.com/opensearch-project/alerting/issues/2149) | [BUG] Doc-level monitor action templates cannot reliably access the original matched document for notifications on routed indices |
 | opensearch-project/alerting | Issue | [#2220](https://github.com/opensearch-project/alerting/issues/2220) | fix: ClassCastException when updating doc_level_monitor with absent last_run_context in stored metadata |
+| opensearch-project/alerting | Issue | [#2222(https://github.com/opensearch-project/alerting/issues/2222) | [BUG] Doc-level monitor with multiple triggers generates duplicate findings per matched document |
 | opensearch-project/security-analytics | PR | [#1726](https://github.com/opensearch-project/security-analytics/pull/1726) | fix: set deleteQueryIndexInEveryRun=false for chained_findings monitor |
 | opensearch-project/security-analytics | PR | [#1797](https://github.com/opensearch-project/security-analytics/pull/1797) | fix: guard against null and immutable map returns in RuleIndices and CustomLogType |
 | opensearch-project/security-analytics | Issue | [#1731](https://github.com/opensearch-project/security-analytics/issues/1731) | [BUG] OSMapping uses `timestamp` alias instead of ECS-standard `@timestamp`, breaking time-range filters for ECS-compliant indices |
