@@ -1,17 +1,16 @@
 #  SPDX-FileCopyrightText: 2026 SAP SE or an SAP affiliate company
 #  SPDX-License-Identifier: Apache-2.0
 
-# OpenSearch 3.7.0
-FROM opensearchproject/opensearch@sha256:123e6591a47b1d54686890551bdb35739c85193ecded381219fc9e059e18128f
+# OpenSearch 3.8.0
+FROM opensearchproject/opensearch@sha256:bcc1797519726ceb6d651d4a3e60b7c30da91793914a8dfe75fd441d4f641509
 
 LABEL source_repository="https://github.com/SAP-cloud-infrastructure/opensearch-fortlogs.git"
 
 # Download and verify plugin archives
-RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.7.0.0-sci-v9/opensearch-alerting-3.7.0.0-sci-v9-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
- && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.7.0.0-sci-v6/opensearch-security-analytics-3.7.0.0-sci-v6-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
- && echo "56050ba97fea5e4a943ac6785999030eed15887326c751212ec04a23925b0ac4 /tmp/opensearch-alerting.zip" | sha256sum -c - \
-
- && echo "99f74502b8561049b7289e0fe9fb1ee0c29caef8d1ef154c20a16437db287bbc  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
+RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.8.0.0-sci-v3/opensearch-alerting-3.8.0.0-sci-v3-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
+ && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.8.0.0-sci-v3/opensearch-security-analytics-3.8.0.0-sci-v3-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
+ && echo "967ff4ce9083906dd2f694645aa1a8b095683e85cbf1160d98c9c344b4205db4 /tmp/opensearch-alerting.zip" | sha256sum -c - \
+ && echo "3836d69c8f6457e719aff0465b224996bebb2eb070dcd48278a0f7388be38e28  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
 
 # Don't change the order!
 RUN /usr/share/opensearch/bin/opensearch-plugin remove opensearch-security-analytics \
