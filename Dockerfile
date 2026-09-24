@@ -8,9 +8,9 @@ LABEL source_repository="https://github.com/SAP-cloud-infrastructure/opensearch-
 
 # Download and verify plugin archives
 RUN curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-alerting/releases/download/3.8.0.0-sci-v3/opensearch-alerting-3.8.0.0-sci-v3-SNAPSHOT.zip -o /tmp/opensearch-alerting.zip \
- && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.8.0.0-sci-v3/opensearch-security-analytics-3.8.0.0-sci-v3-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
+ && curl -fsSL https://github.com/SAP-cloud-infrastructure/opensearch-security-analytics/releases/download/3.8.0.0-sci-v4/opensearch-security-analytics-3.8.0.0-sci-v4-SNAPSHOT.zip -o /tmp/opensearch-security-analytics.zip \
  && echo "967ff4ce9083906dd2f694645aa1a8b095683e85cbf1160d98c9c344b4205db4 /tmp/opensearch-alerting.zip" | sha256sum -c - \
- && echo "3836d69c8f6457e719aff0465b224996bebb2eb070dcd48278a0f7388be38e28  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
+ && echo "08e58b283d7595cc04cbcf10383b7f1d2eb2611882fbee7a6781b2a916f176a1  /tmp/opensearch-security-analytics.zip" | sha256sum -c -
 
 # Don't change the order!
 RUN /usr/share/opensearch/bin/opensearch-plugin remove opensearch-security-analytics \
