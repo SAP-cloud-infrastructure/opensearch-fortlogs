@@ -51,6 +51,7 @@ Upstream PRs with critical fixes are open but unmerged. This image ships those f
 | opensearch-project/alerting | Issue | [#2220](https://github.com/opensearch-project/alerting/issues/2220) | fix: ClassCastException when updating doc_level_monitor with absent last_run_context in stored metadata |
 | opensearch-project/alerting | Issue | [#2222](https://github.com/opensearch-project/alerting/issues/2222) | [BUG] Doc-level monitor with multiple triggers generates duplicate findings per matched document |
 | opensearch-project/alerting | PR | [#2302](https://github.com/opensearch-project/alerting/pull/2302) | fix: doc-level monitor with N triggers produces N×M findings instead of M |
+| opensearch-project/alerting | PR | [#2332](https://github.com/opensearch-project/alerting/pull/2332) | Fix: detect field-type conflicts across all backing indices in doc-level monitors |
 | opensearch-project/security-analytics | PR | [#1726](https://github.com/opensearch-project/security-analytics/pull/1726) | fix: set deleteQueryIndexInEveryRun=false for chained_findings monitor |
 | opensearch-project/security-analytics | PR | [#1797](https://github.com/opensearch-project/security-analytics/pull/1797) | fix: guard against null and immutable map returns in RuleIndices and CustomLogType |
 | opensearch-project/security-analytics | PR | [#1827](https://github.com/opensearch-project/security-analytics/pull/1827) | fix(rules): emit native wildcard DSL for wildcard-typed fields |
